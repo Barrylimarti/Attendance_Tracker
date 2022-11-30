@@ -15,7 +15,7 @@ Facial Analytics API: [Face-API](https://github.com/justadudewhohacks/face-api.j
 
 ### Step 1: Download the source code
 
-1. If you have "git" installed, open CMD and type "git clone https://github.com/agrsrashti/Smart_Attendance
+1. If you have "git" installed, open CMD and type "git clone https://github.com/Barrylimarti/Smart_Attendance.git"
 
 ### Step 2: Install the dependency
 
