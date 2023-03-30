@@ -1,18 +1,18 @@
-const { UserInputError } = require('apollo-server');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const { UserInputError } = require("apollo-server");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-const { cloudinary } = require('../../util/cloudinary');
+const { cloudinary } = require("../../util/cloudinary");
 
-const Person = require('../../models/person.model');
+const Person = require("../../models/person.model");
 
-const { PersongqlParser } = require('./merge');
+const { PersongqlParser } = require("./merge");
 const {
   validateRegisterInput,
   validateLoginInput,
-} = require('../../util/validators');
+} = require("../../util/validators");
 
-const checkAuth = require('../../util/check-auth');
+const checkAuth = require("../../util/check-auth");
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
@@ -29,7 +29,7 @@ function generateToken(person) {
     },
     SECRET_KEY,
     {
-      expiresIn: '8h',
+      expiresIn: "8h",
     }
   );
   return token;
@@ -53,7 +53,7 @@ module.exports = {
         if (person) {
           return PersongqlParser(person);
         } else {
-          throw new UserInputError('Person not exist');
+          throw new UserInputError("Person not exist");
         }
       } catch (err) {
         let errors = {};
@@ -89,15 +89,15 @@ module.exports = {
         );
 
         if (!valid) {
-          throw new UserInputError('Errors', { errors });
+          throw new UserInputError("Errors", { errors });
         }
 
         const existingPerson = await Person.findOne({
           email,
         });
         if (existingPerson) {
-          errors.email = 'Email already taken';
-          throw new UserInputError('Email exists already', {
+          errors.email = "Email already taken";
+          throw new UserInputError("Email exists already", {
             errors,
           });
         }
@@ -124,23 +124,23 @@ module.exports = {
       try {
         const { valid, errors } = validateLoginInput(email, password);
 
-        if (!valid) throw new UserInputError('UserInputError', { errors });
+        if (!valid) throw new UserInputError("UserInputError", { errors });
 
         const person = await Person.findOne({ email: email });
         if (!person) {
-          errors.general = 'Email does not exist';
-          throw new UserInputError('Email does not exist!', { errors });
+          errors.general = "Email does not exist";
+          throw new UserInputError("Email does not exist!", { errors });
         }
 
         const isEqual = await bcrypt.compare(password, person.password);
 
         if (person.googleID && !isEqual) {
-          throw new UserInputError('Please sign in using Google', { errors });
+          throw new UserInputError("Please sign in using Google", { errors });
         }
 
         if (!person.googleID && !isEqual) {
-          errors.general = 'Password is incorrect';
-          throw new UserInputError('Password is incorrect!', { errors });
+          errors.general = "Password is incorrect";
+          throw new UserInputError("Password is incorrect!", { errors });
         }
 
         await Person.updateOne(person, { $set: { lastLogin: Date.now() } });
@@ -173,14 +173,14 @@ module.exports = {
             firstName: googleFirstName,
             lastName: googleLastName,
             email: googleEmail,
-            cardID: 'none',
-            password: 'dummyPass',
+            cardID: "none",
+            password: "dummyPass",
             profilePictureURL: googleProfilePicture,
             userLevel: -1,
           });
 
           const savedPerson = await newPerson.save();
-          
+
           const token = generateToken(savedPerson);
           return PersongqlParser(savedPerson, token);
         } else {
@@ -214,8 +214,8 @@ module.exports = {
         const updatedPerson = await Person.findById(currUser._id);
 
         if (!updatedPerson) {
-          errors.general = 'User do not exist';
-          throw new UserInputError('User do not exist!', { errors });
+          errors.general = "User do not exist";
+          throw new UserInputError("User do not exist!", { errors });
         }
 
         const token = generateToken(updatedPerson);
@@ -237,7 +237,7 @@ module.exports = {
         if (profilePicture) {
           const uploadedResponse = await cloudinary.uploader.upload(
             profilePicture,
-            { upload_preset: 'attendence_profilepicture' }
+            { upload_preset: "attendVision_profilepicture" }
           );
 
           const oldPerson = await Person.findByIdAndUpdate(currUser._id, {
@@ -263,8 +263,8 @@ module.exports = {
         const updatedPerson = await Person.findById(currUser._id);
 
         if (!updatedPerson) {
-          errors.general = 'User do not exist';
-          throw new UserInputError('User do not exist!', { errors });
+          errors.general = "User do not exist";
+          throw new UserInputError("User do not exist!", { errors });
         }
 
         const token = generateToken(updatedPerson);

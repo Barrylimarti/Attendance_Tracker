@@ -63,7 +63,7 @@ module.exports = {
 
       try {
         const course = await Course.findOne({ shortID: courseID });
-        if (!course){
+        if (!course) {
           throw new Error("Course does not exist.");
         }
         if (
@@ -95,7 +95,7 @@ module.exports = {
       const currUser = checkAuth(context);
       try {
         const uploadedResponse = await cloudinary.uploader.upload(photoData, {
-          folder: `AttendenceTracker/FaceGallery/${currUser._id}`,
+          folder: `AttendVision/FaceGallery/${currUser._id}`,
         });
 
         const facePhoto = new FacePhoto({
