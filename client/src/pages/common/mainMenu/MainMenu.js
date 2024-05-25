@@ -17,16 +17,16 @@ export default () => {
       <Content>
         <Row align="middle">
           <Col style={{ top: '50px' }} span={24} align="middle">
-            <Title level={3}>
-              <Texty>
+            <Title level={6}>
+              <Texty style={{color:"#804dee"}}>
                 Welcome to Smart attendance
               </Texty>
             </Title>
-            <Texty type="left" mode="smooth" interval="20">
+            <Texty type="left" mode="smooth" interval="20" style={{color:"#371F76"}}>
               An attendance tracking app with facial recognition
             </Texty>
             <br></br>
-            <Button type='primary' htmlType='submit'>
+            <Button htmlType='submit' style={{background:"#371F76",color:"white"}}>
               <Link to='/signup'>Get Started</Link>
             </Button>
             

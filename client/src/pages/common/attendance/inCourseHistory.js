@@ -317,7 +317,7 @@ export default (props) => {
                   ?.getAttendanceListCountInCourse || 0}
               </h1>
               {user.userLevel === 1 && (
-                <Button style={{ float: "right" }} type="primary">
+                <Button style={{ float: "right",backgroundColor:"#371F76",color:"white" }} >
                   <Link
                     to={`/course/${props.match.params.id}/attendanceForm`}
                   >

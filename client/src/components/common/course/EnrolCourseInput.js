@@ -40,9 +40,8 @@ export default () => {
 
         <Form.Item>
           <Button
-            type='primary'
             loading={enrolCourseStatus.loading}
-            style={{ marginLeft: '10px' }}
+            style={{ marginLeft: '10px',backgroundColor:"#371F76",color:"white" }}
             htmlType='submit'
           >
             Submit

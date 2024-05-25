@@ -91,6 +91,7 @@ export default (props) => {
               label='Email'
               name='email'
               rules={[{ required: true, message: 'Please input your email!' }]}
+              style={{color:"white"}}
             >
               <Input
                 name='email'
@@ -117,10 +118,10 @@ export default (props) => {
 
             <Form.Item>
               <Button
-                type='primary'
                 htmlType='submit'
                 loading={loading}
                 disabled={pressedGoogleLogin || loginGoogleUserStatus.loading}
+                style={{backgroundColor:"#371F76",color:'white'}}
               >
                 Submit
               </Button>

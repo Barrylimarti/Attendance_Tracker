@@ -120,9 +120,9 @@ export default (props) => {
             <Divider />
             <Form.Item>
               <Button
-                type="primary"
                 htmlType="submit"
                 loading={editCardIDAndRoleStatus.loading}
+                style={{backgroundColor:"#371F76",color:"white"}}
               >
                 Submit
               </Button>

@@ -11,7 +11,7 @@ export default () => {
   const { collapsed } = useContext(NavbarContext);
 
   return (
-    <Menu theme='dark' mode='vertical' defaultSelectedKeys={[path]}  style={{backgroundColor:'rgb(14,61,31'}}>
+    <Menu theme='dark' mode='vertical' defaultSelectedKeys={[path]}  style={{backgroundColor:'#371F76'}}>
       <Menu.Item key={'dashboard'} icon={<HomeOutlined />}>
         <Link to={'/dashboard'}>Courses</Link>
       </Menu.Item>

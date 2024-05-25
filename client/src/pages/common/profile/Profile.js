@@ -139,7 +139,7 @@ export default () => {
                 </Form.Item>
 
                 <Form.Item>
-                  <Button type='primary' htmlType='submit' disabled={loading}>
+                  <Button htmlType='submit' disabled={loading} style={{backgroundColor:"#371F76",color:"white"}}>
                     Submit {loading ? <LoadingOutlined /> : null}
                   </Button>
                 </Form.Item>

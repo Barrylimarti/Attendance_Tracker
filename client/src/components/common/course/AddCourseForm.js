@@ -78,7 +78,7 @@ export default ({ refetchTableTotal, refetchTable }) => {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" loading={loading}>
+            <Button htmlType="submit" loading={loading} style={{backgroundColor:"#371F76",color:"white"}}>
               Submit
             </Button>
           </Form.Item>

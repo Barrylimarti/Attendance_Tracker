@@ -14,7 +14,7 @@ export default () => {
   return (
     <>
       <Sider className='siderNavbar' collapsible collapsed={collapsed} 
-        onCollapse={toggleCollapsed} style={{backgroundColor:'rgb(14,61,31'}}>
+        onCollapse={toggleCollapsed} style={{backgroundColor:'#371F76'}}>
         {user.userLevel == 0 ? <StudentSiderNavbar /> : <LecturerSiderNavbar />}
       </Sider>
     </>

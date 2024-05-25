@@ -72,7 +72,9 @@
 .App-link {
   color: #61dafb;
 }
-
+.ant-layout-sider-trigger{
+  background-color:#371F76;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

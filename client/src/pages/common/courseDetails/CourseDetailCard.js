@@ -22,7 +22,7 @@ export default ({ course }) => {
           </p>
           {user.userLevel === 1 && (
             <>
-              <Button type='primary' className='courseDetails__takeAttendance'>
+              <Button  className='courseDetails__takeAttendance' style={{backgroundColor:"#371F76",color:"white"}}>
                 <Link to={`/course/${course.shortID}/attendanceForm`}>
                   Create Attendance
                 </Link>

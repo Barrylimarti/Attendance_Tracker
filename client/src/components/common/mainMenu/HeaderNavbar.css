@@ -33,6 +33,7 @@
 }
 .headerNavbar__menu{
     float: right;
+    width: 183px;
 }
 
 .headerNavbar .avatar{
@@ -41,10 +42,13 @@
     margin-right: 10px;
 }
 .headerNavbar {
-    background-color:rgb(14,61,31);
+    background-color:#371F76;
     color: #fff;
 }
 .abc{
-    background-color:rgb(14,61,31);
+    background-color:#371F76;
     color: #fff;
+}
+.abc:hover{
+    background-color:#804dee;
 }

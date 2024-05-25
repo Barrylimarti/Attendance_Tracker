@@ -122,9 +122,9 @@ export default (props) => {
               <Form.Item>
                 <Button
                   disabled={courseGQLQuery.loading}
-                  type="primary"
                   htmlType="submit"
                   loading={submitAttendanceStatus.loading}
+                  style={{backgroundColor:"#371F76",color:"white"}}
                 >
                   Submit
                 </Button>
