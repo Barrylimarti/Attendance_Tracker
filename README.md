@@ -24,7 +24,7 @@ Facial Analytics API: [Face-API](https://github.com/justadudewhohacks/face-api.j
 3. Open another terminal, type command: cd server && npm i
 
 ### Step 3: Follow steps given in doc to set credentials(env variable)
-      https://docs.google.com/document/d/1kQ-BZwoNjYQRsj0Kuj8kDsK7XypuOEo3WS4FnslEdV4/edit?usp=sharing
+      https://docs.google.com/document/d/1MYb4kCazT90eUUHd0IEcII57fpcNU3PtRy9zSY50DDE/edit?usp=sharing
 ---
 
 ## Running the application
